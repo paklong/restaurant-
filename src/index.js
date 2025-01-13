@@ -1,5 +1,5 @@
 import './style.css';
+import './initialPage';
 
 
-console.log('Hi Pak! Nice!');
-const hey = '123';
+
