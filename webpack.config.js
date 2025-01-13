@@ -19,8 +19,8 @@ module.exports = {
             template: './src/html/template.html',
         }),
         new WebpackObfuscator({
-            rotateStringArray: true
-        })
+            reservedStrings: ['\s*']
+        }),
 
     ],
     module: {
