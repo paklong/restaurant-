@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/scripts/index.js',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
@@ -11,11 +11,11 @@ module.exports = {
     },
     devtool: 'eval-source-map',
     devServer: {
-        watchFiles: ["./src/*"],
+        watchFiles: ["./src/**/*"],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/template.html',
+            template: './src/html/template.html',
         }),
 
     ],
@@ -23,7 +23,16 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        },
+
+                    },
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
