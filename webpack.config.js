@@ -3,7 +3,7 @@ const WebpackObfuscator = require('webpack-obfuscator');
 const path = require('path');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/scripts/index.js',
     output: {
         filename: 'main.js',
