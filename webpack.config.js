@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackObfuscator = require('webpack-obfuscator');
 const path = require('path');
 
 module.exports = {
@@ -17,6 +18,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/html/template.html',
         }),
+        new WebpackObfuscator({
+            rotateStringArray: true
+        })
 
     ],
     module: {
